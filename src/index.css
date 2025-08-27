@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark Neon Theme for Bappa */
+    --background: 240 10% 5%;
+    --foreground: 280 100% 95%;
+
+    --card: 240 15% 8%;
+    --card-foreground: 280 100% 95%;
+
+    --popover: 240 15% 8%;
+    --popover-foreground: 280 100% 95%;
+
+    /* Primary - Neon Orange */
+    --primary: 25 100% 60%;
+    --primary-foreground: 240 10% 5%;
+
+    /* Secondary - Electric Purple */
+    --secondary: 280 100% 70%;
+    --secondary-foreground: 240 10% 5%;
+
+    /* Muted - Dark Purple */
+    --muted: 260 20% 15%;
+    --muted-foreground: 280 50% 70%;
+
+    /* Accent - Neon Pink */
+    --accent: 320 100% 70%;
+    --accent-foreground: 240 10% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 30% 20%;
+    --input: 260 25% 12%;
+    --ring: 25 100% 60%;
+
+    /* Neon Colors */
+    --neon-orange: 25 100% 60%;
+    --neon-purple: 280 100% 70%;
+    --neon-pink: 320 100% 70%;
+    --neon-blue: 220 100% 70%;
+    --electric-yellow: 55 100% 70%;
+
+    /* Neon Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(240 10% 5%), hsl(280 80% 15%), hsl(25 100% 60%));
+    --gradient-glow: linear-gradient(180deg, hsl(280 100% 70%), hsl(25 100% 60%));
+    --gradient-electric: linear-gradient(45deg, hsl(320 100% 70%), hsl(280 100% 70%), hsl(220 100% 70%));
+
+    /* Neon Shadows & Effects */
+    --shadow-neon: 0 0 30px hsl(var(--neon-orange) / 0.6), 0 0 60px hsl(var(--neon-purple) / 0.4);
+    --glow-orange: 0 0 20px hsl(var(--neon-orange) / 0.8), inset 0 0 20px hsl(var(--neon-orange) / 0.3);
+    --glow-purple: 0 0 20px hsl(var(--neon-purple) / 0.8), inset 0 0 20px hsl(var(--neon-purple) / 0.3);
+    --glow-text: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with warm festive tones */
+    --background: 25 15% 8%;
+    --foreground: 35 50% 92%;
+
+    --card: 25 20% 12%;
+    --card-foreground: 35 50% 92%;
+
+    --popover: 25 20% 12%;
+    --popover-foreground: 35 50% 92%;
+
+    --primary: 25 95% 55%;
+    --primary-foreground: 25 15% 8%;
+
+    --secondary: 25 25% 20%;
+    --secondary-foreground: 35 50% 92%;
+
+    --muted: 25 20% 15%;
+    --muted-foreground: 35 25% 65%;
+
+    --accent: 10 85% 45%;
+    --accent-foreground: 35 50% 92%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 20% 25%;
+    --input: 25 20% 18%;
+    --ring: 25 95% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    background: #000000;
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--neon-orange));
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Neon button variants */
+  .btn-neon {
+    @apply relative overflow-hidden font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105;
+    font-family: 'Orbitron', monospace;
+    background: linear-gradient(45deg, hsl(var(--neon-orange)), hsl(var(--neon-purple)));
+    color: hsl(var(--background));
+    box-shadow: var(--shadow-neon);
+    text-shadow: 0 0 10px currentColor;
+  }
+
+  .btn-neon:hover {
+    box-shadow: 0 0 40px hsl(var(--neon-orange) / 0.8), 0 0 80px hsl(var(--neon-purple) / 0.6);
+  }
+
+  .btn-neon:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.3), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-neon:hover:before {
+    left: 100%;
+  }
+
+  .btn-game {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+    box-shadow: var(--glow-purple);
+  }
+
+  /* Card styles */
+  .card-neon {
+    @apply bg-card/80 backdrop-blur-lg border border-purple-500/30 rounded-3xl p-8 shadow-2xl relative;
+    box-shadow: var(--shadow-neon);
+  }
+
+  .card-neon:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, hsl(var(--neon-orange)), hsl(var(--neon-purple)), hsl(var(--neon-pink)));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    z-index: -1;
+  }
+
+  .card-blessing {
+    @apply bg-card/90 backdrop-blur-lg border border-orange-500/50 rounded-2xl p-6 shadow-xl;
+    box-shadow: var(--glow-orange);
+  }
+
+  /* Text styles */
+  .text-neon {
+    font-family: 'Orbitron', monospace;
+    background: linear-gradient(45deg, hsl(var(--neon-orange)), hsl(var(--neon-purple)), hsl(var(--neon-pink)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: var(--glow-text);
+  }
+
+  .text-blessing {
+    @apply text-foreground font-medium leading-relaxed;
+    text-shadow: 0 0 10px hsl(var(--neon-orange) / 0.9
+    );
+  }
+
+
+  /* Animation classes */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow-animation {
+    animation: neonGlow 2s ease-in-out infinite alternate;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .neon-border {
+    position: relative;
+  }
+
+  .neon-border:before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, hsl(var(--neon-orange)), hsl(var(--neon-purple)), hsl(var(--neon-pink)));
+    z-index: -1;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(2deg); }
+  50% { transform: translateY(-20px) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-2deg); }
+}
+
+@keyframes neonGlow {
+  from { 
+    box-shadow: 0 0 10px hsl(var(--neon-orange) / 0.4), 0 0 40px hsl(var(--neon-purple) / 0.2); 
+  }
+  to { 
+    box-shadow: 0 0 20px hsl(var(--neon-orange) / 0.8), 0 0 80px hsl(var(--neon-purple) / 0.4), 0 0 120px hsl(var(--neon-pink) / 0.2); 
+  }
+}
+
+@keyframes textGlow {
+  from { text-shadow: 0 0 3px currentColor; }
+  to { text-shadow: 0 0 8px currentColor, 0 0 12px currentColor; }
+}
+
+@keyframes borderGlow {
+  from { filter: brightness(100%) saturate(100%); }
+  to { filter: brightness(120%) saturate(150%); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modakFall {
+  from {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(calc(100vh + 100px)) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes celebration {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(1) rotate(360deg); opacity: 1; }
+}
