@@ -1,5 +1,3 @@
-# Lovable Project
-
 ## Project Description
 This project is a web application built using modern technologies to provide an engaging user experience. It allows users to interact with various features seamlessly.
 
@@ -56,12 +54,6 @@ npm run dev
 - Select the "Codespaces" tab.
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## How can I deploy this project?
-Simply open [Lovable](https://lovable.dev/projects/5d7bd6c3-c70b-4d91-bf80-2da70289c1ed) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-Yes, you can! To connect a domain, navigate to Project > Settings > Domains and click Connect Domain. Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
 
 ## Contributing
 Contributions are welcome! Please follow the standard GitHub workflow for contributing to this project.
